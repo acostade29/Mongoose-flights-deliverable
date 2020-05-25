@@ -1,6 +1,26 @@
 <%- include('../partials/header')  %>
 
-<h1>This is the index page</h1>
+<table> 
+    <thead>
+        <tr>
+            <th>Flight</th>
+            <th>Airline</th>
+            <th>Airport</th>
+            <th>Departure Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% flights.forEach(function(f) { %>
+            <tr>
+                <td><%= f.flightNo %></td>
+                <td><%= f.airline %></td>
+                <td><%= f.Airport %></td>   
+                <td><%= f.departs %></td>
+                   
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %> 
 
