@@ -28,7 +28,7 @@ const flightSchema = new Schema({
         }
     }
 }, {
-    timeStamps: true
+    timestamps: true
 });
 
 

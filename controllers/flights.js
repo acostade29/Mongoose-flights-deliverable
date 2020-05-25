@@ -3,7 +3,8 @@ const Flight = require('../models/flight');
 
 module.exports = {
     index,
-    new: newFlightView
+    new: newFlightView,
+    create
 } 
 
 function index(req, res) {
@@ -11,5 +12,9 @@ function index(req, res) {
 }
 
 function newFlightView(req, res) {
-    res.render('fligths/views');
+    res.render('flights/new');
+}
+
+function create(req,res) {
+    
 }
