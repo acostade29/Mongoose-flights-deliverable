@@ -4,8 +4,15 @@ const Flight = require('../models/flight');
 module.exports = {
     index,
     new: newFlightView,
-    create
+    create,
+    delete: deleteOne
 } 
+
+function deleteOne(req, res) {
+    Flight.findByIdAndDelete(req.params.id, function(err, flight){
+        res.redirect('/flights');
+        })
+}
 
 function index(req, res) {
     Flight.find({}, function(err, flights){
