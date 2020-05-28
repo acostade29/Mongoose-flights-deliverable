@@ -28,7 +28,12 @@
         </select>    
     </label>
 <br></br>
-<button type='sumit'>Add Flight</button>
+
+<button type='submit'>Add Flight</button>
 </form>
+<form method="GET" action="/tickets/flights/<%= flight._id %>/tickets/new">
+    <button type="submit">Add Ticket</button>
+</form>
+
 <%- include('../partials/footer') %> 
 

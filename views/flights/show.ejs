@@ -6,6 +6,11 @@
     <div>Departure Date: <%= flight.departs %></div>
     <div>Departure Airport: <%= flight.airport %></div>
 </section><br><br>
+
+<form method="GET" action="/tickets/flights/<%= flight._id %>/tickets/new">
+    <button type="submit">Add Ticket</button>
+</form>
+
 <form action="/flights/<%= flight._id %>/destinations" method="POST">
     Add Destination:
     <select name="airport">
@@ -18,6 +23,7 @@
     Arrival Date:
     <input type="datetime-local" name='arrival'>
     <button type='submit'>Add Destination</button>
+    
 </form>
 
 <h3>Destination Info</h3>

@@ -9,16 +9,14 @@ module.exports = {
 };
 
 function newTicketPage(req, res) {
-    console.log(req.params.id)
+
     Flight.findById(req.params.id, function(err, flight) {
-        res.render('tickets/new', {title: 'Add Ticket', flight});
+        res.render('tickets/new', {flight});
     });
 } ;
 
 
 function createTicket(req, res) {
-    console.log(req.body)
-    console.log(req.params.id)
     req.body.flight = req.params.id;
     Ticket.create(req.body, function (err, tickets) {  
       res.redirect(`/flights/${req.params.id}`);
@@ -26,7 +24,7 @@ function createTicket(req, res) {
     };
   
 function deleteTicket(req, res) {
-    console.log(req.params)
+    
     Ticket.findByIdAndDelete(req.params.ticketid, function(err, ticket) {
         res.redirect(`/flights/${req.params.flightid}`);
     })

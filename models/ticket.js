@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const TicketSchema = new Schema({
+const ticketSchema = new Schema({
     seat: {
         type: String,
         required:true,
@@ -25,4 +25,4 @@ const TicketSchema = new Schema({
 
 
 
-module.exports = mongoose.model('ticket',ticketSchema);
+module.exports = mongoose.model('Ticket',ticketSchema);
